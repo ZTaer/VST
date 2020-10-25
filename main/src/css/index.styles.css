@@ -1,0 +1,32 @@
+h1 {
+  color: red;
+}
+
+.well--text--2H_p0 {
+  font-size: 3rem;
+  color: green;
+}
+
+#writeTextContainer {
+  text-align: center;
+  position: fixed;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  z-index: 9999;
+}
+#writeTextContainer #writeText {
+  border-radius: 5px;
+  width: 75%;
+  margin: 0px auto;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 45px;
+  background-color: #000;
+  color: #fff;
+  min-height: 64px;
+}
+
+/*# sourceMappingURL=index.styles.css.map */

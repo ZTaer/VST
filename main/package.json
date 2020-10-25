@@ -1,0 +1,14 @@
+{
+  "name": "JavaScript-dev-env",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "lite-server",
+    "sass-dev": "cd src && sass --style expanded --watch scss:css",
+    "sass-pro": "cd src && sass --style compressed --watch scss:css" 
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
