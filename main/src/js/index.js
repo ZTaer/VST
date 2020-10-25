@@ -59,6 +59,8 @@
         WRITE_TARGET_POS: ".curriculum-item-view--content--3ABmp",      // 渲染字幕位置
         WRITE_TEXT_CONTAINER: "writeTextContainer",                     // 渲染字幕容器
         WRITE_TARGET: "writeText",                                      // 渲染字幕
+        AUTHOR_MSG: "Udemy 翻译字幕v0.0.1 - 作者: __OO7__",
+        NO_TEXT: `( 空 )`,
     };
 
     /**
@@ -81,7 +83,7 @@
 
         const writeText = document.createElement('p');
         writeText.id = GetString.WRITE_TARGET;
-        writeText.textContent="Udemy 翻译字幕v0.0.1 - 作者: __OO7__";
+        writeText.textContent=GetString.AUTHOR_MSG;
 
         writeTargetPos.appendChild( writeTextContainer );
         writeTextContainer.appendChild( writeText );
@@ -103,7 +105,7 @@
                 let watchText = watchTarget.textContent;
                 
                 let watchTextNoSpace = clearStringSpace_utils( watchText );
-                let writeTextNoSpace = median ? clearStringSpace_utils( median ) : "";
+                let writeTextNoSpace = median ? clearStringSpace_utils( median ) : GetString.NO_TEXT;
 
                 if( !writeTarget ){
                     // 渲染字幕组件
