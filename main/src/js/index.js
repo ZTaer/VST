@@ -111,14 +111,13 @@
                     writeTarget = document.querySelector(`#${GetString.WRITE_TARGET}`);
                 }
                 if( watchTextNoSpace !== writeTextNoSpace ){
-                    console.log("更新",watchTextNoSpace, writeTextNoSpace, "xxx" );
                     writeTarget.textContent = watchText;
                     median = watchText;
                 }
             }else{
                 watchTarget = document.querySelector( GetString.WATCH_TARGET );
                 writeTargetPos = document.querySelector(GetString.WRITE_TARGET_POS);
-                console.log( "加载中...." );
+                console.log( "检测字幕中...." );
             }
 
         }, 150 );
@@ -134,7 +133,6 @@
         timerForUrl = setInterval( () => {    
            const nowUrl = location.href;
            if( nowUrl !== oldUrl ){
-               console.log('重新加载');
                oldUrl = nowUrl;
                handleCloseTarget();
                location.reload();
