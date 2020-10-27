@@ -76,7 +76,7 @@
         const writeText = document.createElement('p');
         writeText.id = "writeText";
         writeText.classList.add("write-text");
-        writeText.textContent="Udemy 翻译字幕v0.0.1 - 作者: __OO7__";
+        writeText.textContent="Udemy 翻译字幕v0.0.2 - 作者: __OO7__";
 
         writeTargetPos.appendChild( writeTextContainer );
         writeTextContainer.appendChild( writeText );

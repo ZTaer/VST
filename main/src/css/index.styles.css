@@ -1,13 +1,4 @@
-h1 {
-  color: red;
-}
-
-.well--text--2H_p0 {
-  font-size: 3rem;
-  color: green;
-}
-
-#writeTextContainer {
+.write-text-container {
   text-align: center;
   position: fixed;
   bottom: 5%;
@@ -17,7 +8,7 @@ h1 {
   padding: 0px;
   z-index: 9999;
 }
-#writeTextContainer #writeText {
+.write-text-container .write-text {
   border-radius: 5px;
   width: 75%;
   margin: 0px auto;
@@ -27,6 +18,10 @@ h1 {
   background-color: #000;
   color: #fff;
   min-height: 64px;
+}
+
+.temporarily-hide {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=index.styles.css.map */

@@ -17,27 +17,30 @@
     // a) dom
     let headTarget = document.querySelector("head");
     let mainCss = `
-        #writeTextContainer {
-        text-align: center;
-        position: fixed;
-        bottom: 5%;
-        left: 0;
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-        z-index: 9999;
-        }
-        #writeTextContainer #writeText {
-        border-radius: 5px;
-        width: 75%;
-        margin: 0px auto;
-        text-align: center;
-        padding: 0.5rem;
-        font-size: 45px;
-        background-color: #000;
-        color: #fff;
-        min-height: 64px;
-        }
+    .write-text-container {
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 9999;
+    }
+    .write-text-container .write-text {
+    border-radius: 5px;
+    width: 75%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 45px;
+    background-color: #000;
+    color: #fff;
+    min-height: 64px;
+    }
+    .temporarily-hide {
+    opacity: 0;
+    }
     `;
 
     // b) 渲染css
@@ -47,7 +50,6 @@
         headTarget.appendChild( writeTextContainerStyles );
     };
 
-
     // c) 逻辑执行
     BuildStyles( mainCss );     // 渲染css
 
@@ -56,11 +58,13 @@
      */
     const GetString = {
         WATCH_TARGET: ".well--text--2H_p0",                             // 监听字幕
-        WRITE_TARGET_POS: ".curriculum-item-view--content--3ABmp",      // 渲染字幕位置
+        // WRITE_TARGET_POS: ".curriculum-item-view--content--3ABmp",      // 渲染字幕位置
+        WRITE_TARGET_POS: "body",      // 渲染字幕位置
         WRITE_TEXT_CONTAINER: "writeTextContainer",                     // 渲染字幕容器
-        WRITE_TARGET: "writeText",                                      // 渲染字幕
+        WRITE_TEXT: "writeText",                                        // 渲染字幕
+        WRITE_TEXT_CONTAINER_FULL_SCREEN: "writeTextContainerFullScreen",                     // 渲染全屏字幕容器
+        WRITE_TEXT_FULL_SCREEN: "writeTextFullScreen",                                        // 渲染全屏字幕
         AUTHOR_MSG: "Udemy 翻译字幕v0.0.1 - 作者: __OO7__",
-        NO_TEXT: "( 空 )",
     };
 
     /**
@@ -68,9 +72,10 @@
      */
     let watchTarget = document.querySelector( GetString.WATCH_TARGET );
     let writeTargetPos = document.querySelector(GetString.WRITE_TARGET_POS);
-    let writeTarget = document.querySelector(`#${GetString.WRITE_TARGET}`);
-    let timer, median, timerForUrl;
+    let writeTarget = document.querySelector(`#${GetString.WRITE_TEXT}`);
+    let timer, median, timerForUrl, timerForCN;
     let oldUrl = location.href;
+    let buildStart = false;
 
     /**
      * #3 HTML
@@ -80,13 +85,29 @@
     const BuildWriteText = () => {
         const writeTextContainer = document.createElement('div');
         writeTextContainer.id = GetString.WRITE_TEXT_CONTAINER;
+        writeTextContainer.classList.add("write-text-container","temporarily-hide");
+
+        const writeTextContainerFullScreen = document.createElement('div');
+        writeTextContainerFullScreen.id = GetString.WRITE_TEXT_CONTAINER_FULL_SCREEN;
+        writeTextContainerFullScreen.classList.add("write-text-container");
 
         const writeText = document.createElement('p');
-        writeText.id = GetString.WRITE_TARGET;
+        writeText.id = GetString.WRITE_TEXT;
         writeText.textContent = GetString.AUTHOR_MSG;
+        writeText.classList.add("write-text");
+
+        const writeTextFullScreen = document.createElement('p');
+        writeTextFullScreen.id = GetString.WRITE_TEXT_FULL_SCREEN;
+        writeTextFullScreen.textContent = GetString.AUTHOR_MSG;
+        writeTextFullScreen.classList.add("write-text");
 
         writeTargetPos.appendChild( writeTextContainer );
         writeTextContainer.appendChild( writeText );
+
+        watchTarget.parentElement.appendChild( writeTextContainerFullScreen );
+        writeTextContainerFullScreen.appendChild( writeTextFullScreen );
+
+        buildStart = true;
     };  
 
     /**
@@ -110,7 +131,7 @@
                 if( !writeTarget ){
                     // 渲染字幕组件
                     BuildWriteText();  
-                    writeTarget = document.querySelector(`#${GetString.WRITE_TARGET}`);
+                    writeTarget = document.querySelector(`#${GetString.WRITE_TEXT}`);
                 }
                 if( watchTextNoSpace !== writeTextNoSpace ){
                     writeTarget.textContent = watchText;
@@ -137,6 +158,7 @@
            if( nowUrl !== oldUrl ){
                oldUrl = nowUrl;
                handleCloseTarget();
+               handleCloseWatchCN();
                location.reload();
            }
         }, 500 );
@@ -147,10 +169,33 @@
         clearInterval( timerForUrl );
     };
 
+    // d) 监听翻译后的内容( 临时性功能，未来将删除 )
+    const handleWatchCN = () => {
+        timerForCN = setInterval( () => {    
+            if( buildStart ){
+                const text = document.querySelector(`#${GetString.WRITE_TEXT}`);
+                const target = document.querySelector(`#${GetString.WRITE_TEXT_FULL_SCREEN}`);
+                if( 
+                    ( text && target ) 
+                    &&
+                    ( text.textContent !== target.textContent )
+                 ){
+                    target.textContent = text.textContent;
+                }
+            }
+        }, 100 );
+    };
+
+    // e) 关闭监听翻译后的内容( 临时性功能，未来将删除 )
+    const handleCloseWatchCN = () => {
+        clearInterval( timerForCN );
+    };
+
     /**
      * #5 逻辑执行区域
      */
     handleWatchTarget();
+    handleWatchCN();
     handleWatchUrl();
 
 })();
