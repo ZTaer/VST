@@ -47,7 +47,6 @@
         headTarget.appendChild( writeTextContainerStyles );
     };
 
-
     // c) 逻辑执行
     BuildStyles( mainCss );     // 渲染css
 
@@ -59,6 +58,8 @@
         WRITE_TARGET_POS: ".curriculum-item-view--content--3ABmp",      // 渲染字幕位置
         WRITE_TEXT_CONTAINER: "writeTextContainer",                     // 渲染字幕容器
         WRITE_TEXT: "writeText",                                        // 渲染字幕
+        WRITE_TEXT_CONTAINER_FULL_SCREEN: "writeTextContainerFullScreen",                     // 渲染全屏字幕容器
+        WRITE_TEXT_FULL_SCREEN: "writeTextFullScreen",                                        // 渲染全屏字幕
         AUTHOR_MSG: "Udemy 翻译字幕v0.0.1 - 作者: __OO7__",
         NO_TEXT: "( 空 )",
     };
