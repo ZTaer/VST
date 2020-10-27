@@ -17,7 +17,7 @@
     // a) dom
     let headTarget = document.querySelector("head");
     let mainCss = `
-        #writeTextContainer {
+    #writeTextContainer {
         text-align: center;
         position: fixed;
         bottom: 5%;
@@ -26,8 +26,8 @@
         margin: 0px;
         padding: 0px;
         z-index: 9999;
-        }
-        #writeTextContainer #writeText {
+      }
+      #writeTextContainer #writeText {
         border-radius: 5px;
         width: 75%;
         margin: 0px auto;
@@ -37,7 +37,7 @@
         background-color: #000;
         color: #fff;
         min-height: 64px;
-        }
+      }
     `;
 
     // b) 渲染css
@@ -58,7 +58,7 @@
         WATCH_TARGET: ".well--text--2H_p0",                             // 监听字幕
         WRITE_TARGET_POS: ".curriculum-item-view--content--3ABmp",      // 渲染字幕位置
         WRITE_TEXT_CONTAINER: "writeTextContainer",                     // 渲染字幕容器
-        WRITE_TARGET: "writeText",                                      // 渲染字幕
+        WRITE_TEXT: "writeText",                                        // 渲染字幕
         AUTHOR_MSG: "Udemy 翻译字幕v0.0.1 - 作者: __OO7__",
         NO_TEXT: "( 空 )",
     };
@@ -68,7 +68,7 @@
      */
     let watchTarget = document.querySelector( GetString.WATCH_TARGET );
     let writeTargetPos = document.querySelector(GetString.WRITE_TARGET_POS);
-    let writeTarget = document.querySelector(`#${GetString.WRITE_TARGET}`);
+    let writeTarget = document.querySelector(`#${GetString.WRITE_TEXT}`);
     let timer, median, timerForUrl;
     let oldUrl = location.href;
 
@@ -82,7 +82,7 @@
         writeTextContainer.id = GetString.WRITE_TEXT_CONTAINER;
 
         const writeText = document.createElement('p');
-        writeText.id = GetString.WRITE_TARGET;
+        writeText.id = GetString.WRITE_TEXT;
         writeText.textContent = GetString.AUTHOR_MSG;
 
         writeTargetPos.appendChild( writeTextContainer );
@@ -110,7 +110,7 @@
                 if( !writeTarget ){
                     // 渲染字幕组件
                     BuildWriteText();  
-                    writeTarget = document.querySelector(`#${GetString.WRITE_TARGET}`);
+                    writeTarget = document.querySelector(`#${GetString.WRITE_TEXT}`);
                 }
                 if( watchTextNoSpace !== writeTextNoSpace ){
                     writeTarget.textContent = watchText;
