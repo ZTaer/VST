@@ -1,4 +1,4 @@
-#writeTextContainer {
+.write-text-container {
   text-align: center;
   position: fixed;
   bottom: 5%;
@@ -8,7 +8,7 @@
   padding: 0px;
   z-index: 9999;
 }
-#writeTextContainer #writeText {
+.write-text-container .write-text {
   border-radius: 5px;
   width: 75%;
   margin: 0px auto;
@@ -18,6 +18,10 @@
   background-color: #000;
   color: #fff;
   min-height: 64px;
+}
+
+.temporarily-hide {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=index.styles.css.map */
