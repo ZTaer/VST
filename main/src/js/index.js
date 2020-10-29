@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         UdemyTranslation
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @namespace    https://github.com/ZTaer/VST
+// @version      0.0.3
+// @description  辅助Udemy进行视频字幕，实时翻译
+// @author       __OO7__
 // @match        *www.udemy.com/course/*
+// @updateURL    https://github.com/ZTaer/VST/blob/master/main/src/js/index.js
 // @grant        none
 // ==/UserScript==
 
