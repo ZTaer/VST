@@ -64,7 +64,7 @@
         WRITE_TEXT: "writeText",                                        // 渲染字幕
         WRITE_TEXT_CONTAINER_FULL_SCREEN: "writeTextContainerFullScreen",                     // 渲染全屏字幕容器
         WRITE_TEXT_FULL_SCREEN: "writeTextFullScreen",                                        // 渲染全屏字幕
-        AUTHOR_MSG: "Udemy 翻译字幕v0.0.2 - 作者: __OO7__",
+        AUTHOR_MSG: "Udemy 翻译字幕v0.0.3 - 作者: __OO7__",
     };
 
     /**
@@ -74,7 +74,7 @@
     let writeTargetPos = document.querySelector(GetString.WRITE_TARGET_POS);
     let writeTarget = document.querySelector(`#${GetString.WRITE_TEXT}`);
     let timer, median, timerForUrl, timerForCN;
-    let oldUrl = location.href;
+    let oldUrl = location.pathname;
     let buildStart = false;
 
     /**
@@ -154,7 +154,7 @@
     // d) 监听url，如果url发生变化，则重新加载页面
     const handleWatchUrl = () => {
         timerForUrl = setInterval( () => {    
-           const nowUrl = location.href;
+           const nowUrl = location.pathname;
            if( nowUrl !== oldUrl ){
                oldUrl = nowUrl;
                handleCloseTarget();
