@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UdemyTranslation
 // @namespace    https://github.com/ZTaer/VST
-// @version      0.0.3
+// @version      0.1.3
 // @description  辅助Udemy进行视频字幕，实时翻译
 // @author       __OO7__
 // @match        *www.udemy.com/course/*
@@ -39,6 +39,11 @@
     color: #fff;
     min-height: 64px;
     }
+    .write-text-container .write-text::selection {
+    color: #F48982;
+    background-color: #007791;
+    }
+
     .temporarily-hide {
     opacity: 0;
     }
@@ -65,7 +70,7 @@
         WRITE_TEXT: "writeText",                                        // 渲染字幕
         WRITE_TEXT_CONTAINER_FULL_SCREEN: "writeTextContainerFullScreen",                     // 渲染全屏字幕容器
         WRITE_TEXT_FULL_SCREEN: "writeTextFullScreen",                                        // 渲染全屏字幕
-        AUTHOR_MSG: "Udemy 翻译字幕v0.0.3 - 作者: __OO7__",
+        AUTHOR_MSG: "Udemy 翻译字幕v0.1.3 - 作者: __OO7__",
     };
 
     /**

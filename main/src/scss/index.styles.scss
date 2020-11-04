@@ -20,6 +20,11 @@
         color: #fff;
         min-height: 64px;
     }
+
+    .write-text::selection {
+			color:#F48982;
+      background-color:#007791;
+		}
 }
 
 .temporarily-hide{
