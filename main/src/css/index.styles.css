@@ -26,6 +26,7 @@
 
 .temporarily-hide {
   opacity: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=index.styles.css.map */

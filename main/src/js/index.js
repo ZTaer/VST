@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UdemyTranslation
 // @namespace    https://github.com/ZTaer/VST
-// @version      0.1.3
+// @version      0.1.4
 // @description  辅助Udemy进行视频字幕，实时翻译
 // @author       __OO7__
 // @match        *www.udemy.com/course/*
@@ -70,7 +70,7 @@
         WRITE_TEXT: "writeText",                                        // 渲染字幕
         WRITE_TEXT_CONTAINER_FULL_SCREEN: "writeTextContainerFullScreen",                     // 渲染全屏字幕容器
         WRITE_TEXT_FULL_SCREEN: "writeTextFullScreen",                                        // 渲染全屏字幕
-        AUTHOR_MSG: "Udemy 翻译字幕v0.1.3 - 作者: __OO7__",
+        AUTHOR_MSG: "Udemy 翻译字幕v0.1.4 - 作者: __OO7__",
     };
 
     /**
