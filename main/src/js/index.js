@@ -46,7 +46,9 @@
 
     .temporarily-hide {
     opacity: 0;
+    z-index: -1;
     }
+
     `;
 
     // b) 渲染css
