@@ -20,24 +20,24 @@
 <h2> 安装教程: </h2>
 
 <h3> #0 复制脚本代码( 主要脚本路径: ./main/src/js/index.js ) </h3>
-<img src="./images/00.png" alt="复制脚本代码" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/00.png" alt="复制脚本代码" >
 
 <h3> #1 到Tampermonkey添加脚本 </h3>
-<img src="./images/11.png" alt="到Tampermonkey添加脚本" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/11.png" alt="到Tampermonkey添加脚本" >
 
 <h3> #2 保存脚本( Ctrl+S ) </h3>
-<img src="./images/22.png" alt="保存脚本" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/22.png" alt="保存脚本" >
 
 <h3> #3 确保脚本启用 </h3>
-<img src="./images/33.png" alt="确保脚本启用" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/33.png" alt="确保脚本启用" >
 
 <h2> 使用教程: </h2>
 
 <h3> #0 打开Udemy字幕 </h3>
-<img src="./images/0.png" alt="打开Udemy字幕" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/0.png" alt="打开Udemy字幕" >
 
 <h3> #1 Udemy字幕配置 </h3>
-<img src="./images/1.png" alt="Udemy字幕配置" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/1.png" alt="Udemy字幕配置" >
 
 <h3> #2 与谷歌翻译配合 </h3>
-<img src="./images/3.png" alt="与谷歌翻译配合" >
+<img src="https://cdn.jsdelivr.net/gh/ZTaer/VST@master/images/3.png" alt="与谷歌翻译配合" >
