@@ -73,7 +73,7 @@
     WRITE_TEXT: "writeText", // 渲染字幕
     WRITE_TEXT_CONTAINER_FULL_SCREEN: "writeTextContainerFullScreen", // 渲染全屏字幕容器
     WRITE_TEXT_FULL_SCREEN: "writeTextFullScreen", // 渲染全屏字幕
-    AUTHOR_MSG: "Udemy 翻译字幕v0.1.6 - 作者: __OO7__",
+    AUTHOR_MSG: "Udemy 翻译字幕v0.1.7 - 作者: __OO7__",
   };
 
   /**
