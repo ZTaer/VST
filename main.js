@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         UdemyTranslation
 // @namespace    https://github.com/ZTaer/VST
-// @version      0.1.7
+// @version      0.1.8
 // @description  辅助Udemy进行视频字幕，实时翻译
 // @author       __OO7__
 // @match        *www.udemy.com/course/*
@@ -66,7 +66,7 @@
    * #1 String
    */
   const GetString = {
-    WATCH_TARGET: ".well--text--1xGLx", // 监听字幕
+    WATCH_TARGET: ".well--text--J1-Qi", // 监听字幕
     // WRITE_TARGET_POS: ".curriculum-item-view--content--3ABmp",      // 渲染字幕位置
     WRITE_TARGET_POS: "body", // 渲染字幕位置
     WRITE_TEXT_CONTAINER: "writeTextContainer", // 渲染字幕容器
